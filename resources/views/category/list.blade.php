@@ -13,7 +13,9 @@ table, th, td {
 </head>
 <body>
 <h2>Category list</h2>
-<h>Create category:<a href="/createc"> Here</a></h>
+<h1>Create category:<a href="/createc"> Here</a></h1>
+<h1> Register :<a href="/register"> Here</a></h1>
+<h1> Login :<a href="/login"> Here</a></h1>
 <table style="width:100%">
   <tr>
     <th>Id</th>

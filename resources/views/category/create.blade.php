@@ -8,6 +8,7 @@
 </head>
 <body>
     <p>Create category </p>
+    <h1>Hello {{ auth()->user()->name }}</h1>
     <form method="POST" action="/savec">
         @csrf
         

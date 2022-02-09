@@ -13,7 +13,8 @@ table, th, td {
 </head>
 <body>
 <h2>Articales list</h2>
-<h>Create Articale:<a href="/create"> Here</a></h>
+<h1>Create Articale:<a href="/create"> Here</a></h1>
+
 <table style="width:100%">
   <tr>
     <th>Id</th>

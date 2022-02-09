@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\ArticaleController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
@@ -16,13 +17,21 @@ use App\Http\Controllers\CategoryController;
 */
 
 Route::get('/', function () {
-    return view('store');
+    return view('welcome');
 });
-Route::get('/home', [IndexController::class, 'home']);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+Route::get('/', [IndexController::class, 'home']);
+// Route::get('/home', [IndexController::class, 'home']);
 Route::get('/product/{id}', [IndexController::class, 'product_details']);
 
-Route::get('/categories', [CategoryController::class, 'list'])->name('category.list');
-Route::get('/createc', [CategoryController::class, 'create']);
+Route::get('/categories', [CategoryController::class, 'list'])->name('category.list')->middleware(['auth']);
+Route::get('/createc', [CategoryController::class, 'create'])->middleware(['auth','is_admin','date_of_birth']);
 Route::post('/savec', [CategoryController::class, 'save']);
 Route::delete('/deletec/{id}', [CategoryController::class, 'delete']);
 Route::get('/showc/{id}', [CategoryController::class, 'show']);

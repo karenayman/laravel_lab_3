@@ -32,7 +32,7 @@ class IndexController extends Controller
         ];
        
         // $category=['phones','watches','sports wear','others'];
-        return view("store",['cat' => $category , 'pro'=> $this->product]);
+        return view("welcome",['cat' => $category , 'pro'=> $this->product]);
     }
     public function product_details($id)
     {
